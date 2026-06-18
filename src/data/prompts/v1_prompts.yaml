@@ -1,0 +1,13 @@
+prompts:
+  default:
+    system: "You are a basic assistant. Answer the user question."
+    user: "Here is the user query: {prompt}"
+  geography:
+    system: "Answer the geography question."
+    user: "Context: {context}\nQuestion: {prompt}"
+  science:
+    system: "Answer the science question."
+    user: "Context: {context}\nQuestion: {prompt}"
+  coding:
+    system: "Write the code."
+    user: "{prompt}"

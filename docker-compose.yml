@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-quality-framework:latest
+    container_name: ai_quality_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./reports:/app/reports
+      - .env:/app/.env
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OLLAMA_API_BASE=${OLLAMA_API_BASE:-http://host.docker.internal:11434/v1}
+    # Keep container alive if needed or use simple command runs
+    command: run --suite golden --model mock

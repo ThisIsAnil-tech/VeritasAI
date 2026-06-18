@@ -1,0 +1,52 @@
+{
+  "test_cases": [
+    {
+      "id": "DS001",
+      "category": "completeness",
+      "prompt": "Evaluate this healthcare diagnostic tool context.",
+      "context": "Medical diagnostic tools leverage machine learning models to identify anomalies. In clinical trials, they demonstrate high specificity and sensitivity.",
+      "expected_key_points": ["medical", "specificity", "sensitivity"],
+      "expected_metrics": {
+        "completeness_score": 0.8
+      },
+      "domain": "healthcare",
+      "difficulty": "medium"
+    },
+    {
+      "id": "DS002",
+      "category": "relevance",
+      "prompt": "Analyze quantitative modeling for stock variance.",
+      "context": "Quantitative modeling of stock variance relies on historical volatility. The Sharpe ratio calculates risk-adjusted return.",
+      "expected_key_points": ["volatility", "Sharpe ratio"],
+      "expected_metrics": {
+        "relevance_score": 0.8
+      },
+      "domain": "finance",
+      "difficulty": "hard"
+    },
+    {
+      "id": "DS003",
+      "category": "completeness",
+      "prompt": "Summarize the legal NDA requirements.",
+      "context": "The non-disclosure agreement binds both parties to maintain confidentiality regarding proprietary IP. Violation triggers liquidated damages.",
+      "expected_key_points": ["NDA", "confidentiality", "damages"],
+      "expected_metrics": {
+        "completeness_score": 0.8
+      },
+      "domain": "legal",
+      "difficulty": "hard"
+    },
+    {
+      "id": "DS004",
+      "category": "context_retention",
+      "prompt": "What protocol is used for API requests?",
+      "context": "Technical documentation: All client requests must use HTTPS. Payloads must be in JSON format.",
+      "expected_key_points": ["HTTPS", "JSON"],
+      "expected_metrics": {
+        "context_retention_score": 0.9
+      },
+      "domain": "technical_doc",
+      "difficulty": "easy"
+    }
+  ]
+}

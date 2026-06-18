@@ -1,0 +1,242 @@
+{
+  "test_cases": [
+    {
+      "id": "TC001",
+      "category": "hallucination",
+      "prompt": "What is the capital of France?",
+      "context": "France is a country in Europe. Paris is the capital city of France.",
+      "expected_response": "Paris",
+      "expected_metrics": {
+        "hallucination_score": 0.85,
+        "relevance_score": 0.75,
+        "completeness_score": 0.8
+      },
+      "domain": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC002",
+      "category": "context_retention",
+      "prompt": "Based on the previous conversation, what did I say about climate change?",
+      "context": "User: Climate change is caused by greenhouse gases. Assistant: Yes, that's correct. User: What are the main sources?",
+      "expected_key_points": ["greenhouse gases", "human activities"],
+      "expected_metrics": {
+        "context_retention_score": 0.8,
+        "relevance_score": 0.7
+      },
+      "domain": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "TC003",
+      "category": "relevance",
+      "prompt": "Summarize the rules of soccer briefly.",
+      "context": "Soccer is played by two teams of 11 players. The object of the game is to score by driving the ball into the opponent's goal, without using hands or arms.",
+      "expected_response": "Soccer is a sport played with two 11-player teams. The goal is to kick the ball into the opponents' net without using hands.",
+      "expected_metrics": {
+        "relevance_score": 0.8,
+        "completeness_score": 0.85
+      },
+      "domain": "sports",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC004",
+      "category": "completeness",
+      "prompt": "Write a python function to greet a user by name.",
+      "context": "Standard Python greeting template.",
+      "expected_response": "def greet(name):\n    return f'Hello, {name}!'",
+      "expected_key_points": ["def", "greet", "return"],
+      "expected_metrics": {
+        "completeness_score": 0.8,
+        "relevance_score": 0.8
+      },
+      "domain": "coding",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC005",
+      "category": "consistency",
+      "prompt": "Explain the significance of the Magna Carta.",
+      "context": "Magna Carta was issued in June 1215 and was the first document to put into writing the principle that the king and his government were not above the law.",
+      "expected_metrics": {
+        "consistency_score": 0.85
+      },
+      "domain": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": "TC006",
+      "category": "hallucination",
+      "prompt": "Who wrote Romeo and Juliet?",
+      "context": "William Shakespeare was an English playwright who wrote Romeo and Juliet in the late 16th century.",
+      "expected_response": "William Shakespeare",
+      "expected_metrics": {
+        "hallucination_score": 0.9
+      },
+      "domain": "literature",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC007",
+      "category": "context_retention",
+      "prompt": "What did the customer say their account number was?",
+      "context": "Customer: Hello, I have an issue with my transaction. Agent: Sure, I can help. Can I have your account number? Customer: Yes, it is ACT987654. Agent: Thank you.",
+      "expected_key_points": ["ACT987654"],
+      "expected_metrics": {
+        "context_retention_score": 0.9
+      },
+      "domain": "finance",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC008",
+      "category": "relevance",
+      "prompt": "What is photosythesis?",
+      "context": "Photosynthesis is the process by which green plants use sunlight to synthesize nutrients from carbon dioxide and water.",
+      "expected_metrics": {
+        "relevance_score": 0.8
+      },
+      "domain": "science",
+      "difficulty": "medium"
+    },
+    {
+      "id": "TC009",
+      "category": "completeness",
+      "prompt": "Give a 3-part description of medical diagnostic tools.",
+      "context": "Medical diagnostic tools analyze patient metrics. Introduction: diagnostic models detect patterns. Body details: clinical validation shows high sensitivity. Conclusion: these support doctors.",
+      "expected_key_points": ["Introduction", "clinical", "Conclusion"],
+      "expected_metrics": {
+        "completeness_score": 0.85
+      },
+      "domain": "healthcare",
+      "difficulty": "hard"
+    },
+    {
+      "id": "TC010",
+      "category": "consistency",
+      "prompt": "What are the primary colors?",
+      "context": "The primary colors of light are red, green, and blue. For paints, they are red, yellow, and blue.",
+      "expected_metrics": {
+        "consistency_score": 0.9
+      },
+      "domain": "art",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC011",
+      "category": "hallucination",
+      "prompt": "Explain black holes according to Einstein.",
+      "context": "Albert Einstein developed the general theory of relativity, which predicts that a sufficiently compact mass can deform spacetime to form a black hole.",
+      "expected_metrics": {
+        "hallucination_score": 0.8
+      },
+      "domain": "physics",
+      "difficulty": "hard"
+    },
+    {
+      "id": "TC012",
+      "category": "context_retention",
+      "prompt": "List the three requirements mentioned for the password.",
+      "context": "System notice: Your password must contain at least 8 characters, at least one uppercase letter, and one special character.",
+      "expected_key_points": ["8 characters", "uppercase letter", "special character"],
+      "expected_metrics": {
+        "context_retention_score": 0.85
+      },
+      "domain": "security",
+      "difficulty": "medium"
+    },
+    {
+      "id": "TC013",
+      "category": "relevance",
+      "prompt": "How do you calculate the area of a circle?",
+      "context": "The area of a circle is calculated using the formula A = pi * r^2, where r is the radius.",
+      "expected_metrics": {
+        "relevance_score": 0.85
+      },
+      "domain": "math",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC014",
+      "category": "completeness",
+      "prompt": "Describe the NDA contract rules.",
+      "context": "Introduction: NDA binds parties to secrecy. Body details: Proprietary IP cannot be shared. Violation triggers damages. Conclusion: Governed by Delaware law.",
+      "expected_key_points": ["NDA", "IP", "Delaware"],
+      "expected_metrics": {
+        "completeness_score": 0.85
+      },
+      "domain": "legal",
+      "difficulty": "hard"
+    },
+    {
+      "id": "TC015",
+      "category": "consistency",
+      "prompt": "What is the speed of light?",
+      "context": "The speed of light in a vacuum is exactly 299,792,458 meters per second.",
+      "expected_metrics": {
+        "consistency_score": 0.95
+      },
+      "domain": "physics",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC016",
+      "category": "hallucination",
+      "prompt": "Tell me about the First World War start.",
+      "context": "World War I began on July 28, 1914, following the assassination of Archduke Franz Ferdinand.",
+      "expected_metrics": {
+        "hallucination_score": 0.8
+      },
+      "domain": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": "TC017",
+      "category": "context_retention",
+      "prompt": "Who is the CEO of the company mentioned?",
+      "context": "Company Announcement: Acme Corp appoints John Doe as the new CEO starting next fiscal year.",
+      "expected_key_points": ["John Doe", "Acme Corp"],
+      "expected_metrics": {
+        "context_retention_score": 0.9
+      },
+      "domain": "business",
+      "difficulty": "easy"
+    },
+    {
+      "id": "TC018",
+      "category": "relevance",
+      "prompt": "Explain stock variance models.",
+      "context": "Introduction: stock variance models utilize historical volatility. Body details: Sharpe ratio computes returns. Conclusion: investors must review risks.",
+      "expected_metrics": {
+        "relevance_score": 0.8
+      },
+      "domain": "finance",
+      "difficulty": "hard"
+    },
+    {
+      "id": "TC019",
+      "category": "completeness",
+      "prompt": "What are the requirements to vote in the US?",
+      "context": "To vote in US presidential elections, you must be a US citizen, meet your state's residency requirements, and be at least 18 years old.",
+      "expected_key_points": ["US citizen", "residency", "18 years old"],
+      "expected_metrics": {
+        "completeness_score": 0.8
+      },
+      "domain": "civics",
+      "difficulty": "medium"
+    },
+    {
+      "id": "TC020",
+      "category": "consistency",
+      "prompt": "What is the chemical formula for water?",
+      "context": "Water consists of hydrogen and oxygen, with the chemical formula H2O.",
+      "expected_response": "H2O",
+      "expected_metrics": {
+        "consistency_score": 0.95
+      },
+      "domain": "science",
+      "difficulty": "easy"
+    }
+  ]
+}

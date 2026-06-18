@@ -1,0 +1,28 @@
+models:
+  gpt-4:
+    provider: "openai"
+    context_window: 8192
+    cost_per_1k_input: 0.03
+    cost_per_1k_output: 0.06
+    api_version: null
+  gpt-3.5-turbo:
+    provider: "openai"
+    context_window: 4096
+    cost_per_1k_input: 0.0015
+    cost_per_1k_output: 0.002
+    api_version: null
+  claude-3-opus:
+    provider: "anthropic"
+    context_window: 200000
+    cost_per_1k_input: 0.015
+    cost_per_1k_output: 0.075
+  claude-3-sonnet:
+    provider: "anthropic"
+    context_window: 200000
+    cost_per_1k_input: 0.003
+    cost_per_1k_output: 0.015
+  mock:
+    provider: "mock"
+    context_window: 4096
+    cost_per_1k_input: 0.0
+    cost_per_1k_output: 0.0

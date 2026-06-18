@@ -1,0 +1,57 @@
+project:
+  name: "AI Quality Evaluation Framework"
+  version: "1.0.0"
+
+llm:
+  default_model: "gpt-4"
+  models:
+    - name: "gpt-4"
+      provider: "openai"
+      temperature: 0.7
+      max_tokens: 2000
+    - name: "gpt-3.5-turbo"
+      provider: "openai"
+      temperature: 0.7
+      max_tokens: 2000
+    - name: "claude-3-opus"
+      provider: "anthropic"
+      temperature: 0.7
+      max_tokens: 2000
+    - name: "claude-3-sonnet"
+      provider: "anthropic"
+      temperature: 0.7
+      max_tokens: 2000
+    - name: "mock"
+      provider: "mock"
+      temperature: 0.0
+      max_tokens: 2000
+
+metrics:
+  hallucination:
+    threshold: 0.8
+    method: "nli"  # nli, embedding, or hybrid
+  relevance:
+    threshold: 0.7
+    method: "cosine"
+  consistency:
+    threshold: 0.85
+    runs: 3
+  completeness:
+    min_length: 10
+    max_length: 2000
+
+testing:
+  parallel_workers: 4
+  timeout: 30
+  retry_attempts: 3
+
+reporting:
+  output_dir: "./reports"
+  formats: ["html", "json"]
+  include_charts: true
+  include_raw_data: true
+
+datasets:
+  golden_path: "./src/data/datasets/golden_dataset.json"
+  edge_path: "./src/data/datasets/edge_cases.json"
+  domain_path: "./src/data/datasets/domain_specific.json"

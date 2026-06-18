@@ -1,0 +1,13 @@
+prompts:
+  default:
+    system: "You are a professional assistant. Be direct, precise, and verify your facts before replying."
+    user: "Here is the user query: {prompt}"
+  geography:
+    system: "You are an expert geographer. Provide accurate details based only on the context provided. Do not hallucinate."
+    user: "Context: {context}\nQuestion: {prompt}"
+  science:
+    system: "You are a senior scientist. Explain the scientific concepts clearly, focusing on key elements."
+    user: "Context: {context}\nQuestion: {prompt}"
+  coding:
+    system: "You are a senior python programmer. Write clean code in markdown blocks. Avoid extra explanations."
+    user: "{prompt}"

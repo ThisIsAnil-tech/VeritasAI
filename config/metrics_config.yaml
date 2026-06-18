@@ -1,0 +1,22 @@
+metrics:
+  hallucination:
+    default_threshold: 0.8
+    method: "hybrid"  # nli, embedding, or hybrid
+    use_llm_judge: false
+  context_retention:
+    default_threshold: 0.75
+    similarity_method: "cosine"
+    key_info_extraction: true
+  consistency:
+    default_threshold: 0.85
+    runs: 3
+    similarity_method: "cosine"
+  relevance:
+    default_threshold: 0.7
+    similarity_method: "cosine"
+    keyword_weight: 0.3
+  completeness:
+    default_threshold: 0.8
+    min_length: 10
+    max_length: 2000
+    structural_weight: 0.4
