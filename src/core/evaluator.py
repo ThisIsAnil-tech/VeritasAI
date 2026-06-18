@@ -21,6 +21,7 @@ from core.metrics import (
 from utils.config import AppConfig
 
 class TestCaseResult(BaseModel):
+    __test__ = False
     test_case_id: str
     category: str
     prompt: str

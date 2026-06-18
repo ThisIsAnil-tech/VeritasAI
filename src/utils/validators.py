@@ -1,5 +1,5 @@
 import json
-from typing import Dict, Any, Tuple, List
+from typing import Dict, Any, Tuple, List, Optional
 from pydantic import BaseModel, Field, ValidationError
 
 class TestCaseSchema(BaseModel):
