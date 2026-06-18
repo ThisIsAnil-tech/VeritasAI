@@ -1,0 +1,61 @@
+The project is fully set up and committed. Here is how you can start and run the AI Quality Evaluation and Prompt Regression Framework:
+
+1. Environment Setup
+If you haven't already, create and activate a virtual environment, then install the dependencies:
+
+powershell
+# Create a virtual environment
+python -m venv venv
+# Activate it (Windows PowerShell)
+.\venv\Scripts\activate
+# Install the framework and dependencies
+pip install -r requirements.txt
+pip install -e .
+2. Configure Your API Keys
+Copy the .env.example file to .env:
+
+powershell
+copy .env.example .env
+Open .env and configure your API keys (e.g., OPENAI_API_KEY, ANTHROPIC_API_KEY). Note: If no API keys are provided, the system will automatically utilize the Mock Client fallback, allowing you to run all evaluations offline.
+
+3. Core Commands & Workflows
+A. Execute a Quality Evaluation Run
+Run the golden dataset evaluation suite against the Mock provider (or standard GPT models if keys are set):
+
+powershell
+python src/main.py run --suite golden --model mock
+This will:
+
+Generate responses for the 20+ test cases.
+Execute quality metrics (Hallucination, Context Retention, Relevance, Consistency, and Completeness).
+Print a summary table to your console.
+Save structured logs to reports/report_<run_id>.json.
+Compile a premium dashboard to reports/report_<run_id>.html.
+B. Compare Prompts (Regression Testing)
+Compare prompt templates from version 1 against version 2 to detect quality regressions or check improvements:
+
+powershell
+python src/main.py compare --v1 src/data/prompts/v1_prompts.yaml --v2 src/data/prompts/v2_prompts.yaml --model mock
+This prints a comparison matrix showing average score differences between prompt versions.
+
+C. Launch the Interactive Dashboard
+Serve and open the premium evaluation dashboard in your default browser:
+
+powershell
+python src/main.py dashboard --port 8000
+This serves the dashboard showing pass/fail status, interactive Plotly charts (Latency/Cost scatter, average metric scores, status donut), category pass rates, and expandable detailed logs for each test case.
+
+D. Analyze Failure Patterns
+Identify and group failure modes from the latest evaluation run:
+
+powershell
+python src/main.py analyze --run-id latest --pattern all
+4. Running Framework Automated Tests
+You can run the internal unit tests (verifying metrics, caches, and configuration parser):
+
+powershell
+pytest tests/ -v
+Or run the PyTest-integrated evaluation suites directly:
+
+powershell
+pytest src/tests/ -v

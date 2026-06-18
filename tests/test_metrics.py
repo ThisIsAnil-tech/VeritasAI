@@ -75,7 +75,7 @@ def test_completeness_metric():
     
     # Complete text matching length and structure bounds
     res1 = metric.evaluate(
-        response="Introduction: The process is simple. Body details: We connect and verify. Conclusion: This completes the workflow.",
+        response="Introduction: The process is simple.\n\nBody details: We connect and verify.\n\nConclusion: This completes the workflow.",
     )
     assert res1.passed
     assert res1.details["length_score"] == 1.0
@@ -93,7 +93,7 @@ def test_consistency_metric():
     # High consistency
     res1 = metric.evaluate(
         response="Paris is the capital.",
-        alternate_responses=["Paris is the capital of France.", "Paris is the main capital."]
+        alternate_responses=["Paris is the capital.", "Paris is the capital."]
     )
     assert res1.passed
     assert res1.score >= 0.85

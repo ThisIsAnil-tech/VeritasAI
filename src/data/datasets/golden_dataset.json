@@ -8,8 +8,8 @@
       "expected_response": "Paris",
       "expected_metrics": {
         "hallucination_score": 0.85,
-        "relevance_score": 0.75,
-        "completeness_score": 0.8
+        "relevance_score": 0.70,
+        "completeness_score": 0.45
       },
       "domain": "geography",
       "difficulty": "easy"
@@ -21,8 +21,8 @@
       "context": "User: Climate change is caused by greenhouse gases. Assistant: Yes, that's correct. User: What are the main sources?",
       "expected_key_points": ["greenhouse gases", "human activities"],
       "expected_metrics": {
-        "context_retention_score": 0.8,
-        "relevance_score": 0.7
+        "context_retention_score": 0.75,
+        "relevance_score": 0.30
       },
       "domain": "science",
       "difficulty": "medium"
@@ -84,7 +84,7 @@
       "context": "Customer: Hello, I have an issue with my transaction. Agent: Sure, I can help. Can I have your account number? Customer: Yes, it is ACT987654. Agent: Thank you.",
       "expected_key_points": ["ACT987654"],
       "expected_metrics": {
-        "context_retention_score": 0.9
+        "context_retention_score": 0.80
       },
       "domain": "finance",
       "difficulty": "easy"

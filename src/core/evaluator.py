@@ -228,8 +228,9 @@ class Evaluator:
             target_metrics = {k: self.metrics[k].threshold for k in self.metrics.keys()}
 
         for m_name, custom_threshold in target_metrics.items():
-            if m_name in self.metrics:
-                metric = self.metrics[m_name]
+            metric_key = m_name.replace("_score", "")
+            if metric_key in self.metrics:
+                metric = self.metrics[metric_key]
                 # Override threshold if custom defined in test case
                 original_threshold = metric.threshold
                 metric.threshold = custom_threshold

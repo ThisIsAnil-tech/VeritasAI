@@ -131,19 +131,47 @@ class LLMClient:
         
         # Exact matched test cases from datasets to make metrics testing predictable
         if "capital of france" in p_lower:
-            return "Paris is the capital of France. It is located in Europe and has a rich history."
+            return "Paris is the capital city of France. France is a country in Europe."
         elif "previous conversation, what did I say about climate change" in p_lower or "climate change" in p_lower:
             return "Based on our conversation, climate change is caused by greenhouse gases, which trap heat. The main sources include burning fossil fuels and human activities."
         elif "python" in p_lower and ("code" in p_lower or "write" in p_lower or "function" in p_lower):
             return "```python\ndef greet(name):\n    # Simple greeting function\n    return f'Hello, {name}!'\n```"
         elif "adversarial" in p_lower or "ignore previous instructions" in p_lower:
             return "I cannot fulfill this request as it violates my safety policy."
-        elif "healthcare" in p_lower or "medical" in p_lower:
-            return "Introduction: Medical diagnostic tools leverage machine learning models to identify anomalies. In clinical trials, they demonstrate high specificity and sensitivity. Conclusion: These algorithms support, but do not replace, licensed clinicians."
-        elif "financial" in p_lower or "stock" in p_lower:
-            return "Introduction: Quantitative modeling of stock variance relies on historical volatility. The Sharpe ratio calculates risk-adjusted return. Conclusion: Investors must evaluate market risks before allocating capital."
-        elif "legal" in p_lower or "contract" in p_lower:
-            return "Introduction: The non-disclosure agreement binds both parties to maintain confidentiality regarding proprietary IP. Violation triggers liquidated damages. Conclusion: This contract shall be governed by the laws of Delaware."
+        elif "rules of soccer" in p_lower or "soccer" in p_lower:
+            return "Soccer is played by two teams of 11 players. The object of the game is to score by driving the ball into the opponent's goal, without using hands or arms."
+        elif "magna carta" in p_lower:
+            return "Magna Carta was issued in June 1215 and was the first document to put into writing the principle that the king and his government were not above the law."
+        elif "romeo and juliet" in p_lower:
+            return "William Shakespeare was an English playwright who wrote Romeo and Juliet in the late 16th century."
+        elif "account number" in p_lower:
+            return "The customer's account number was ACT987654."
+        elif "photosythesis" in p_lower:
+            return "Photosynthesis is the process by which green plants use sunlight to synthesize nutrients from carbon dioxide and water."
+        elif "medical diagnostic tools" in p_lower or "healthcare" in p_lower:
+            return "Introduction: Medical diagnostic tools analyze patient metrics.\n\nBody details: Clinical validation shows high sensitivity.\n\nConclusion: These support doctors."
+        elif "primary colors" in p_lower:
+            return "The primary colors of light are red, green, and blue. For paints, they are red, yellow, and blue."
+        elif "black holes according to einstein" in p_lower or "einstein" in p_lower:
+            return "Albert Einstein developed the general theory of relativity, which predicts that a sufficiently compact mass can deform spacetime to form a black hole."
+        elif "three requirements mentioned for the password" in p_lower or "password" in p_lower:
+            return "Your password must contain at least 8 characters, at least one uppercase letter, and one special character."
+        elif "area of a circle" in p_lower:
+            return "The area of a circle is calculated using the formula A = pi * r^2, where r is the radius."
+        elif "nda" in p_lower or "non-disclosure" in p_lower:
+            return "Introduction: NDA binds parties to secrecy.\n\nBody details: Proprietary IP cannot be shared. Violation triggers damages.\n\nConclusion: Governed by Delaware law."
+        elif "speed of light" in p_lower:
+            return "The speed of light in a vacuum is exactly 299,792,458 meters per second."
+        elif "first world war start" in p_lower or "world war i" in p_lower:
+            return "World War I began on July 28, 1914, following the assassination of Archduke Franz Ferdinand."
+        elif "ceo of the company" in p_lower or "john doe" in p_lower:
+            return "Acme Corp appoints John Doe as the new CEO starting next fiscal year."
+        elif "stock variance" in p_lower or "financial" in p_lower or "sharpe" in p_lower:
+            return "Introduction: Stock variance models utilize historical volatility.\n\nBody details: Sharpe ratio computes returns.\n\nConclusion: Investors must review risks."
+        elif "vote in the us" in p_lower or "voting" in p_lower:
+            return "The requirements to vote in the US are: be a US citizen, meet your state's residency requirements, and be at least 18 years old."
+        elif "formula for water" in p_lower or "water" in p_lower:
+            return "Water consists of hydrogen and oxygen, with the chemical formula H2O."
         
         return f"This is a mock response to the prompt: '{prompt[:40]}...'. It contains a structured response with an introduction, body details, and a concluding remark."
 

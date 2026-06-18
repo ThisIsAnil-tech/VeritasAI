@@ -151,7 +151,7 @@ def cmd_run(args):
         # Metric averages table
         metric_table = [[k, f"{v:.3f}"] for k, v in summary.metric_averages.items()]
         print("\nMetric Averages:")
-        print(tabulate(metric_table, headers=["Metric", "Average Score"], tablefmt="fancy_grid"))
+        print(tabulate(metric_table, headers=["Metric", "Average Score"], tablefmt="grid"))
 
         # Detailed test results summary table
         detailed_table = []
@@ -270,7 +270,7 @@ def cmd_compare(args):
         ])
 
     print("\nPrompt Regression Comparison Table:")
-    print(tabulate(comparison_table, headers=["Case ID", "Category", "V1 Score", "V2 Score", "Diff", "V2 Status"], tablefmt="fancy_grid"))
+    print(tabulate(comparison_table, headers=["Case ID", "Category", "V1 Score", "V2 Score", "Diff", "V2 Status"], tablefmt="grid"))
 
 def cmd_analyze(args):
     """Analyze failure patterns from a previous run log."""

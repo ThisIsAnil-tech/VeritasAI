@@ -1,6 +1,13 @@
+import sys
+from pathlib import Path
+
+# Add src folder to PYTHONPATH
+src_dir = Path(__file__).resolve().parent.parent
+if str(src_dir) not in sys.path:
+    sys.path.insert(0, str(src_dir))
+
 import json
 import pytest
-from pathlib import Path
 from utils.config import get_app_config, AppConfig
 from core.evaluator import Evaluator
 

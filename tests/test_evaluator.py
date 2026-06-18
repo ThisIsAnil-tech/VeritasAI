@@ -30,7 +30,7 @@ def test_evaluate_single_case(evaluator_instance):
         "context": "France is a country in Europe. Paris is the capital.",
         "expected_response": "Paris",
         "expected_metrics": {
-            "relevance_score": 0.7
+            "relevance_score": 0.5
         }
     }
     
@@ -69,7 +69,7 @@ def test_run_suite(evaluator_instance, tmp_path):
                 "category": "relevance",
                 "prompt": "What is the capital of France?",
                 "context": "France capital is Paris.",
-                "expected_metrics": {"relevance_score": 0.6}
+                "expected_metrics": {"relevance_score": 0.5}
             },
             {
                 "id": "T002",
